@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Collaborative Canvas</h1>
+            <div class="user-info">
+                <span id="user-count">Users: 0</span>
+                <span id="connection-status">Connecting...</span>
+            </div>
+        </header>
+
+        <div class="toolbar">
+            <div class="tool-group">
+                <button id="brush-tool" class="tool-btn active" title="Brush">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </button>
+                <button id="eraser-tool" class="tool-btn" title="Eraser">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 20H7L3 16l10-10 7 7-4 4"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="tool-group">
+                <label for="color-picker">Color:</label>
+                <input type="color" id="color-picker" value="#000000">
+            </div>
+
+            <div class="tool-group">
+                <label for="stroke-width">Width:</label>
+                <input type="range" id="stroke-width" min="1" max="20" value="3">
+                <span id="width-value">3</span>
+            </div>
+
+            <div class="tool-group">
+                <button id="undo-btn" class="tool-btn" title="Undo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 7v6h6M3 13a9 9 0 1 0 1.8-5.4"/>
+                    </svg>
+                </button>
+                <button id="redo-btn" class="tool-btn" title="Redo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 7v6h-6M21 13a9 9 0 1 1-1.8-5.4"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="tool-group">
+                <button id="clear-btn" class="tool-btn danger" title="Clear Canvas">Clear</button>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+            <div id="cursors"></div>
+        </div>
+
+        <div class="online-users">
+            <h3>Online Users</h3>
+            <div id="users-list"></div>
+        </div>
+    </div>
+
+    <script src="canvas.js"></script>
+    <script src="websocket.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
