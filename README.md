@@ -2,6 +2,14 @@
 
 A real-time collaborative drawing application where multiple users can draw simultaneously on the same canvas with live synchronization.
 
+# Live Demo
+
+https://flam-assignment-tx5o.onrender.com/
+
+# Demo Video
+
+https://drive.google.com/file/d/1J_kH308xSSsga2oMnxjNE9pbQptJ5ZdF/view?usp=sharing
+
 ## Features
 
 - **Real-time Drawing**: See other users' strokes as they draw
